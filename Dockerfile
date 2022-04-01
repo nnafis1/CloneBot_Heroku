@@ -1,4 +1,7 @@
 FROM ubuntu:20.04
+FROM postgres:10
+ENV TZ="Africa/Lusaka"
+RUN date
 
 WORKDIR /usr/src/app
 RUN chmod 777 /usr/src/app
@@ -21,7 +24,7 @@ RUN locale-gen en_US.UTF-8
 ENV LANG en_US.UTF-8
 ENV LANGUAGE en_US:en
 ENV LC_ALL en_US.UTF-8
-ENV TZ=Asia/Kolkata
+
 
 COPY . .
 
